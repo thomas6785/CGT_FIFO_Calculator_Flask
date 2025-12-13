@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Capital Gains Calculator</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 40px }
+      .card { border: 1px solid #ddd; padding: 20px; border-radius: 6px; max-width: 800px }
+    </style>
+  </head>
+  <body>
+    <h1>Capital Gains Calculator (FIFO)</h1>
+    <div class="card">
+      <p>Upload a CSV with your stock transactions. The app will try to detect the transaction date, quantity, and price columns. If detection fails, you can map columns on the next screen.</p>
+      <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Upload</button>
+      </form>
+      <hr>
+      <p>CSV should include columns for date, quantity (positive for buys, negative for sells), and price.</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Map Columns</title>
+    <style>body { font-family: Arial, sans-serif; margin: 40px } .card { border: 1px solid #ddd; padding: 20px; border-radius: 6px; max-width: 800px }</style>
+  </head>
+  <body>
+    <h1>Map Columns</h1>
+    <div class="card">
+      <p>Confirm which CSV columns correspond to the transaction date, quantity, and price. Your CSV columns:</p>
+      <form action="{{ url_for('calculate') }}" method="post">
+        <input type="hidden" name="csv_path" value="{{ csv_path }}">
+        <div>
+          <label for="date_col">Transaction Date</label>
+          <select name="date_col" id="date_col">
+            <option value="">-- select --</option>
+            {% for c in columns %}
+            <option value="{{c}}" {% if suggestions.date==c %}selected{% endif %}>{{c}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div>
+          <label for="qty_col">Quantity</label>
+          <select name="qty_col" id="qty_col">
+            <option value="">-- select --</option>
+            {% for c in columns %}
+            <option value="{{c}}" {% if suggestions.quantity==c %}selected{% endif %}>{{c}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div>
+          <label for="time_col">Transaction Time (optional)</label>
+          <select name="time_col" id="time_col">
+            <option value="">-- none --</option>
+            {% for c in columns %}
+            <option value="{{c}}" {% if suggestions.time==c %}selected{% endif %}>{{c}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div>
+          <label for="price_col">Price / Total</label>
+          <select name="price_col" id="price_col">
+            <option value="">-- select --</option>
+            {% for c in columns %}
+            <option value="{{c}}" {% if suggestions.price==c %}selected{% endif %}>{{c}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div>
+          <label for="product_col">Product / Stock Symbol</label>
+          <select name="product_col" id="product_col">
+            <option value="">-- select --</option>
+            {% for c in columns %}
+            <option value="{{c}}" {% if suggestions.product==c %}selected{% endif %}>{{c}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <!-- Transaction type column removed: the app relies solely on signed quantities (positive=buy, negative=sell) -->
+        <div style="margin-top: 12px">
+          <button type="submit">Calculate Gains</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

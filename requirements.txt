@@ -1,0 +1,10 @@
+Flask==2.2.5
+pandas==2.3.3
+python-dateutil==2.8.2
+pytest==7.4.0
+
+# Pin Werkzeug to 2.3.x for compatibility with Flask 2.2.x
+Werkzeug==2.3.7
+
+# Optional for production: gunicorn
+openpyxl

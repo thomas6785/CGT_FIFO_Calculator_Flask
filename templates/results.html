@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 40px }
+      table { border-collapse: collapse; width: 100%; table-layout: fixed; }
+      th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top }
+      th:first-child, td:first-child { min-width: 220px }
+    </style>
+  </head>
+  <body>
+    <h1>Capital Gains Results</h1>
+    <p><strong>Total Realized Gain:</strong> {{ "{:.2f}".format(total_gain) }}</p>
+    <p><a href="{{ url_for('download', filename=xlsx_name) }}">Download Excel workbook</a></p>
+
+    {% if product_reports %}
+    <h2>Summary By Product</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          {% for y in years %}
+            <th>{{ y }}</th>
+          {% endfor %}
+          <th>Total Buys</th>
+          <th>Total Sells</th>
+          <th>First Transaction</th>
+          <th>Last Transaction</th>
+          <th>Remaining Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pr in product_reports %}
+        <tr>
+          <td>{{ pr.product }}{% if pr.summary.irregular %}*{% endif %}</td>
+          {% for y in years %}
+            <td>{{ "{:.2f}".format(pr.summary.profit_by_year.get(y, 0.0)) }}</td>
+          {% endfor %}
+          <td>{{ pr.summary.buys_count }}</td>
+          <td>{{ pr.summary.sells_count }}</td>
+          <td>{{ pr.summary.first_date_str }}</td>
+          <td>{{ pr.summary.last_date_str }}</td>
+          <td>{{ "{:.0f}".format(pr.summary.remaining_qty) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    {% for pr in product_reports %}
+    <h2>Product: {{ pr.product }}</h2>
+    <div style="margin-bottom: 8px">
+      <strong>Total Realized Gain ({{ pr.product }}):</strong> {{ "{:.2f}".format(pr.total_gain) }}
+    </div>
+
+    {% if pr.buys and pr.sells %}
+    {% set S = pr.sells | length %}
+    {% set parts = S + 3 if (S + 3) != 0 else 1 %}
+    {% set unit = 100.0 / parts %}
+    {% set first_width = (unit * 3) %}
+    {% set other_width = unit %}
+    <table>
+      <thead>
+        <tr>
+          <th style="width: {{ '%.2f'|format(first_width) }}%">Buy / Sell</th>
+          {% for s in pr.sells %}
+            <th style="width: {{ '%.2f'|format(other_width) }}%">Sell #{{ s.id }} ({{ s.date }})<br>qty: {{ "{:.0f}".format(s.qty) }} @ {{ "{:.2f}".format(s.price) }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for b in pr.buys %}
+        <tr>
+          <td style="width: {{ '%.2f'|format(first_width) }}%">Buy #{{ b.id }} ({{ b.date }})<br>qty: {{ "{:.0f}".format(b.qty) }} @ {{ "{:.2f}".format(b.price) }}</td>
+          {% for s in pr.sells %}
+            <td style="width: {{ '%.2f'|format(other_width) }}%">{{ "{:.0f}".format(pr.matrix[b.id][s.id]) if pr.matrix[b.id][s.id] else '' }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <!-- Sale profits summary adjacent to the matrix -->
+    <div style="margin-top:8px">
+      <strong>Sale Profit per Sell:</strong>
+      <ul>
+        {% for sp in pr.sale_profits %}
+          <li>Sell #{{ sp.sell_id }} ({{ sp.date }}): {{ "{:.2f}".format(sp.profit) }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% elif pr.buys %}
+      <p>Only buys for this product (no sells).</p>
+    {% elif pr.sells %}
+      <p>Only sells for this product (no buys). Unmatched sells: {{ pr.sells | length }}</p>
+    {% endif %}
+
+    <hr>
+    {% endfor %}
+
+    <p style="margin-top: 18px"><a href="{{ url_for('index') }}">Upload another CSV</a></p>
+  </body>
+</html>
