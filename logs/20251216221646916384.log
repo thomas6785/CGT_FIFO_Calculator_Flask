@@ -1,8 +1,0 @@
-Product: ABC
---- Transactions ---
-SELL id=0 date=2020-02-10 qty=100.0 price=15.0
-  UNMATCHED sell_id=0 qty=100.0
---- Matrix (rows=buys, cols=sells) ---
---- Sale profits ---
-SALE id=0 date=2020-02-10 profit=0.0
-
