@@ -258,6 +258,11 @@ def calculate():
     if price_is_total:
         # Avoid division by zero by using NaN for rows with zero abs_qty
         df['unit_price'] = df.apply(lambda r: (abs(r['price']) / r['abs_qty']) if pd.notna(r['abs_qty']) and r['abs_qty'] != 0 else pd.NA, axis=1)
+        # Exclude transactions where the selected price column is a transaction total and the total value is zero
+        zero_total_mask = df['price'].fillna(0).abs() == 0
+        if zero_total_mask.any():
+            # Drop zero-total transactions entirely (they should not be used for FIFO matching)
+            df = df.loc[~zero_total_mask].copy()
     else:
         df['unit_price'] = df['price']
 
@@ -463,48 +468,27 @@ def calculate():
                 center = Alignment(horizontal='center', vertical='center')
                 header_fill = PatternFill(start_color='FFEEEEEE', end_color='FFEEEEEE', fill_type='solid')
 
-                # Headings: row 3 (A3,B3,C3) = date, quantity, price (for purchases)
                 ws['A3'] = 'date (purchases)'
                 ws['B3'] = 'quantity (purchases)'
-                # Note: C3 is shared; we'll use sales-specific label in column C
-                # Headings: column C (C1,C2,C3) = date, quantity, price (for sales)
                 ws['C1'] = 'date (sales)'
                 ws['C2'] = 'quantity (sales)'
                 ws['C3'] = 'price (sales)'
+                
+                # Apply black background and white bold font to label cells
+                black_fill = PatternFill(start_color='FF000000', end_color='FF000000', fill_type='solid')
+                white_bold = Font(bold=True, color='FFFFFFFF')
+                for coord in [('A', 3), ('B', 3), ('C', 1), ('C', 2), ('C', 3)]:
+                    cell = ws[f"{coord[0]}{coord[1]}"]
+                    cell.font = white_bold
+                    cell.fill = black_fill
+                    cell.alignment = center
 
                 # Add Purchases and Sales labels with arrows
                 ws['B1'] = 'Purchases →'
-                ws['A2'] = '← Sales'
+                ws['A2'] = '\u2190 Sales'
 
                 rows = len(pr['buys'])
                 cols = len(pr['sells'])
-                # Apply bold + center to top 3 rows for sell headers (columns D..)
-                for r in range(1, 4):
-                    for c in range(4, 4 + cols):
-                        cell = ws.cell(row=r, column=c)
-                        cell.font = bold
-                        cell.alignment = center
-                        cell.fill = header_fill
-                        # set number formats for qty (row 2) and price (row 3)
-                        if r == 2:
-                            cell.number_format = '0'
-                        if r == 3:
-                            cell.number_format = '#,##0.00'
-
-                # Apply bold + center to row 3 headings for purchases (A3,B3) and shared C3
-                purchases_fill = PatternFill(start_color='FFEEE8D6', end_color='FFEEE8D6', fill_type='solid')
-                for c in range(1, 3):
-                    cell = ws.cell(row=3, column=c)
-                    cell.font = bold
-                    cell.alignment = center
-                    cell.fill = purchases_fill
-                # Apply sales-style fill to column C headers (C1,C2,C3)
-                sales_fill = PatternFill(start_color='FFDDEEFF', end_color='FFDDEEFF', fill_type='solid')
-                for r in range(1, 4):
-                    cell = ws.cell(row=r, column=3)
-                    cell.font = bold
-                    cell.alignment = center
-                    cell.fill = sales_fill
 
                 # Style the Purchases and Sales label cells (B1 and A2)
                 for coord in [('B', 1), ('A', 2)]:
@@ -512,12 +496,18 @@ def calculate():
                     cell.font = bold
                     cell.alignment = center
 
-                # Apply bold + center to column C headings (C1,C2,C3)
+                # Apply bold + center to first 3 columns for buy headers (rows 4..)
                 for r in range(1, 4):
-                    cell = ws.cell(row=r, column=3)
-                    cell.font = bold
-                    cell.alignment = center
-                    cell.fill = header_fill
+                    for c in range(4, 4 + cols):
+                        cell = ws.cell(row=r, column=c)
+                        cell.font = bold
+                        cell.alignment = center
+                        cell.fill = header_fill
+                        # qty column (col 2) integer, price column (col 3) currency
+                        if c == 2:
+                            cell.number_format = '0'
+                        if c == 3:
+                            cell.number_format = '#,##0.00'
 
                 # Apply bold + center to first 3 columns for buy headers (rows 4..)
                 for c in range(1, 4):

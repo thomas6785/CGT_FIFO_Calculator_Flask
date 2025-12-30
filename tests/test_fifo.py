@@ -229,6 +229,43 @@ def test_total_column_detection_and_calculation():
     assert b'500.00' in resp.data
 
 
+def test_exclude_zero_total_transactions():
+    SAMPLE = """date,quantity,total,product
+02/01/2020,100,0,ABC
+10/02/2020,-100,-1500,ABC
+"""
+    client = app.test_client()
+    data = {'file': (BytesIO(SAMPLE.encode('utf-8')), 'total_zero.csv')}
+    resp = client.post('/upload', data=data, content_type='multipart/form-data')
+    assert resp.status_code == 200
+    html = resp.data.decode('utf-8')
+    import re
+    m = re.search(r'name="csv_path" value="([^"]+)"', html)
+    assert m
+    csv_path = m.group(1)
+    # remove any old log file if present
+    import os
+    base = os.path.splitext(os.path.basename(csv_path))[0]
+    log_path = os.path.join('logs', f"{base}.log")
+    if os.path.exists(log_path):
+        os.remove(log_path)
+
+    resp = client.post('/calculate', data={
+        'csv_path': csv_path,
+        'date_col': 'date',
+        'qty_col': 'quantity',
+        'price_col': 'total',
+        'product_col': 'product'
+    }, follow_redirects=True)
+    assert resp.status_code == 200
+    # Zero-total buy should be excluded (no BUY entries), and the sell should be unmatched
+    assert os.path.exists(log_path)
+    with open(log_path, 'r', encoding='utf-8') as fh:
+        content = fh.read()
+    assert 'BUY id=' not in content
+    assert 'UNMATCHED' in content
+
+
 def test_date_time_combination_fifo():
     SAMPLE = """date,time,quantity,price,product
 02/01/2020,09:00,100,10,ABC

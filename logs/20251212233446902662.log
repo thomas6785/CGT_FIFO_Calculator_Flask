@@ -1,0 +1,122 @@
+Product: BANK GEARED ETF
+--- Transactions ---
+SELL id=0 date=2021-02-09 qty=nan price=3.0175
+BUY id=0 date=2021-03-03 qty=800.0 price=4.1295
+BUY id=1 date=2021-04-16 qty=800.0 price=4.1745
+BUY id=2 date=2021-05-19 qty=945.0 price=5.291
+BUY id=3 date=2021-06-15 qty=862.0 price=5.91
+SELL id=1 date=2021-11-10 qty=nan price=6.738
+BUY id=4 date=2022-02-28 qty=200.0 price=4.418
+SELL id=2 date=2022-08-16 qty=nan price=3.088
+SELL id=3 date=2022-08-16 qty=nan price=3.062
+SELL id=4 date=2022-08-16 qty=115.0 price=3.062
+  MATCH sell_id=4 buy_id=0 take=115.0 buy_price=4.1295 sell_price=3.062 realized=-122.76250000000005
+SELL id=5 date=2022-08-16 qty=400.0 price=3.062
+  MATCH sell_id=5 buy_id=0 take=400.0 buy_price=4.1295 sell_price=3.062 realized=-427.0000000000001
+BUY id=5 date=2022-08-17 qty=100.0 price=3.0425
+BUY id=6 date=2022-08-18 qty=295.0 price=2.92
+SELL id=6 date=2025-03-17 qty=nan price=27.0
+SELL id=7 date=2025-03-17 qty=75.0 price=27.0
+  MATCH sell_id=7 buy_id=0 take=75.0 buy_price=4.1295 sell_price=27.0 realized=1715.2875
+SELL id=8 date=2025-03-17 qty=75.0 price=27.0
+  MATCH sell_id=8 buy_id=0 take=75.0 buy_price=4.1295 sell_price=27.0 realized=1715.2875
+SELL id=9 date=2025-03-17 qty=75.0 price=27.0
+  MATCH sell_id=9 buy_id=0 take=75.0 buy_price=4.1295 sell_price=27.0 realized=1715.2875
+SELL id=10 date=2025-03-17 qty=75.0 price=27.0
+  MATCH sell_id=10 buy_id=0 take=60.0 buy_price=4.1295 sell_price=27.0 realized=1372.23
+  MATCH sell_id=10 buy_id=1 take=15.0 buy_price=4.1745 sell_price=27.0 realized=342.3825
+SELL id=11 date=2025-03-17 qty=550.0 price=27.0
+  MATCH sell_id=11 buy_id=1 take=550.0 buy_price=4.1745 sell_price=27.0 realized=12554.025
+SELL id=12 date=2025-03-28 qty=nan price=25.85
+BUY id=7 date=2025-03-28 qty=110.0 price=25.85
+SELL id=13 date=2025-03-28 qty=nan price=25.845
+SELL id=14 date=2025-04-02 qty=nan price=24.74
+SELL id=15 date=2025-04-02 qty=nan price=24.66
+BUY id=8 date=2025-04-04 qty=164.0 price=16.0
+BUY id=9 date=2025-04-04 qty=140.0 price=16.0
+BUY id=10 date=2025-04-04 qty=140.0 price=16.0
+BUY id=11 date=2025-04-04 qty=140.0 price=16.0
+BUY id=12 date=2025-04-04 qty=140.0 price=16.0
+BUY id=13 date=2025-04-04 qty=140.0 price=16.0
+BUY id=14 date=2025-04-04 qty=140.0 price=16.0
+BUY id=15 date=2025-04-04 qty=140.0 price=16.0
+BUY id=16 date=2025-04-04 qty=140.0 price=16.0
+BUY id=17 date=2025-04-04 qty=140.0 price=16.0
+BUY id=18 date=2025-04-04 qty=104.0 price=16.0
+BUY id=19 date=2025-04-04 qty=104.0 price=16.0
+BUY id=20 date=2025-04-04 qty=104.0 price=16.0
+BUY id=21 date=2025-04-04 qty=104.0 price=16.0
+BUY id=22 date=2025-04-04 qty=104.0 price=16.0
+BUY id=23 date=2025-04-04 qty=139.0 price=16.0
+BUY id=24 date=2025-04-04 qty=139.0 price=16.0
+BUY id=25 date=2025-04-04 qty=139.0 price=16.0
+BUY id=26 date=2025-04-04 qty=139.0 price=16.0
+SELL id=16 date=2025-04-04 qty=nan price=15.322
+SELL id=17 date=2025-04-04 qty=nan price=15.324
+SELL id=18 date=2025-04-04 qty=140.0 price=15.324
+  MATCH sell_id=18 buy_id=1 take=140.0 buy_price=4.1745 sell_price=15.324 realized=1560.93
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 0,0,0,0,115,400,0,75,75,75,60,0,0,0,0,0,0,0,0
+BUY 1 -> 0,0,0,0,0,0,0,0,0,0,15,550,0,0,0,0,0,0,140
+BUY 2 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 3 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 4 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 5 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 6 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 7 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 8 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 9 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 10 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 11 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 12 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 13 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 14 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 15 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 16 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 17 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 18 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 19 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 20 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 21 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 22 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 23 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 24 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 25 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BUY 26 -> 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+--- Sale profits ---
+SALE id=0 date=2021-02-09 profit=0.0
+SALE id=1 date=2021-11-10 profit=0.0
+SALE id=2 date=2022-08-16 profit=0.0
+SALE id=3 date=2022-08-16 profit=0.0
+SALE id=4 date=2022-08-16 profit=-122.76250000000005
+SALE id=5 date=2022-08-16 profit=-427.0000000000001
+SALE id=6 date=2025-03-17 profit=0.0
+SALE id=7 date=2025-03-17 profit=1715.2875
+SALE id=8 date=2025-03-17 profit=1715.2875
+SALE id=9 date=2025-03-17 profit=1715.2875
+SALE id=10 date=2025-03-17 profit=1714.6125
+SALE id=11 date=2025-03-17 profit=12554.025
+SALE id=12 date=2025-03-28 profit=0.0
+SALE id=13 date=2025-03-28 profit=0.0
+SALE id=14 date=2025-04-02 profit=0.0
+SALE id=15 date=2025-04-02 profit=0.0
+SALE id=16 date=2025-04-04 profit=0.0
+SALE id=17 date=2025-04-04 profit=0.0
+SALE id=18 date=2025-04-04 profit=1560.93
+
+Product: TEST ITEM
+--- Transactions ---
+BUY id=0 date=2025-04-01 qty=100.0 price=1.0
+BUY id=1 date=2025-04-02 qty=100.0 price=2.0
+SELL id=0 date=2025-04-03 qty=150.0 price=3.0
+  MATCH sell_id=0 buy_id=0 take=100.0 buy_price=1.0 sell_price=3.0 realized=200.0
+  MATCH sell_id=0 buy_id=1 take=50.0 buy_price=2.0 sell_price=3.0 realized=50.0
+SELL id=1 date=2025-04-04 qty=50.0 price=1.0
+  MATCH sell_id=1 buy_id=1 take=50.0 buy_price=2.0 sell_price=1.0 realized=-50.0
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 100,0
+BUY 1 -> 50,50
+--- Sale profits ---
+SALE id=0 date=2025-04-03 profit=250.0
+SALE id=1 date=2025-04-04 profit=-50.0
+

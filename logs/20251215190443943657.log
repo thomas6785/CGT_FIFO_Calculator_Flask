@@ -1,0 +1,919 @@
+Product: ADR ON ALIBABA GROUP HOLDING
+--- Transactions ---
+BUY id=0 date=2022-09-16 08:00 qty=2.0 price=91.0
+BUY id=1 date=2022-09-16 08:01 qty=100.0 price=89.039
+BUY id=2 date=2022-09-16 08:01 qty=1.0 price=92.9
+BUY id=3 date=2023-12-01 15:30 qty=160.0 price=67.02437499999999
+BUY id=4 date=2024-03-18 21:25 qty=12.0 price=68.02499999999999
+BUY id=5 date=2024-04-11 15:52 qty=285.0 price=70.01368421052632
+SELL id=0 date=2025-03-24 14:33 qty=50.0 price=124.72200000000001
+  MATCH sell_id=0 buy_id=0 take=2.0 buy_price=91.0 sell_price=124.72200000000001 realized=67.44400000000002
+  MATCH sell_id=0 buy_id=1 take=48.0 buy_price=89.039 sell_price=124.72200000000001 realized=1712.7840000000003
+SELL id=1 date=2025-03-31 09:04 qty=100.0 price=121.361
+  MATCH sell_id=1 buy_id=1 take=52.0 buy_price=89.039 sell_price=121.361 realized=1680.7440000000001
+  MATCH sell_id=1 buy_id=2 take=1.0 buy_price=92.9 sell_price=121.361 realized=28.461
+  MATCH sell_id=1 buy_id=3 take=47.0 buy_price=67.02437499999999 sell_price=121.361 realized=2553.8213750000004
+SELL id=2 date=2025-03-31 09:10 qty=100.0 price=121.361
+  MATCH sell_id=2 buy_id=3 take=100.0 buy_price=67.02437499999999 sell_price=121.361 realized=5433.662500000001
+BUY id=6 date=2025-04-10 17:46 qty=50.0 price=93.77799999999999
+BUY id=7 date=2025-04-11 09:12 qty=50.0 price=95.178
+BUY id=8 date=2025-06-12 14:37 qty=100.0 price=101.039
+BUY id=9 date=2025-07-04 07:30 qty=50.0 price=92.07799999999999
+BUY id=10 date=2025-07-04 09:54 qty=50.0 price=91.27799999999999
+BUY id=11 date=2025-07-10 10:26 qty=50.0 price=89.77799999999999
+SELL id=3 date=2025-12-15 11:13 qty=390.0 price=130.79
+  MATCH sell_id=3 buy_id=3 take=13.0 buy_price=67.02437499999999 sell_price=130.79 realized=828.953125
+  MATCH sell_id=3 buy_id=4 take=12.0 buy_price=68.02499999999999 sell_price=130.79 realized=753.1800000000001
+  MATCH sell_id=3 buy_id=5 take=285.0 buy_price=70.01368421052632 sell_price=130.79 realized=17321.249999999996
+  MATCH sell_id=3 buy_id=6 take=50.0 buy_price=93.77799999999999 sell_price=130.79 realized=1850.6
+  MATCH sell_id=3 buy_id=7 take=30.0 buy_price=95.178 sell_price=130.79 realized=1068.36
+SELL id=4 date=2025-12-15 11:16 qty=270.0 price=130.8
+  MATCH sell_id=4 buy_id=7 take=20.0 buy_price=95.178 sell_price=130.8 realized=712.4400000000003
+  MATCH sell_id=4 buy_id=8 take=100.0 buy_price=101.039 sell_price=130.8 realized=2976.100000000001
+  MATCH sell_id=4 buy_id=9 take=50.0 buy_price=92.07799999999999 sell_price=130.8 realized=1936.100000000001
+  MATCH sell_id=4 buy_id=10 take=50.0 buy_price=91.27799999999999 sell_price=130.8 realized=1976.100000000001
+  MATCH sell_id=4 buy_id=11 take=50.0 buy_price=89.77799999999999 sell_price=130.8 realized=2051.100000000001
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 2,0,0,0,0
+BUY 1 -> 48,52,0,0,0
+BUY 2 -> 0,1,0,0,0
+BUY 3 -> 0,47,100,13,0
+BUY 4 -> 0,0,0,12,0
+BUY 5 -> 0,0,0,285,0
+BUY 6 -> 0,0,0,50,0
+BUY 7 -> 0,0,0,30,20
+BUY 8 -> 0,0,0,0,100
+BUY 9 -> 0,0,0,0,50
+BUY 10 -> 0,0,0,0,50
+BUY 11 -> 0,0,0,0,50
+--- Sale profits ---
+SALE id=0 date=2025-03-24 14:33 profit=1780.2280000000003
+SALE id=1 date=2025-03-31 09:04 profit=4263.026375
+SALE id=2 date=2025-03-31 09:10 profit=5433.662500000001
+SALE id=3 date=2025-12-15 11:13 profit=21822.343124999996
+SALE id=4 date=2025-12-15 11:16 profit=9651.840000000004
+
+Product: ADVANCED MICRO DEVICES
+--- Transactions ---
+BUY id=0 date=2025-03-05 15:30 qty=1.0 price=95.34
+BUY id=1 date=2025-03-07 15:30 qty=90.0 price=90.977
+BUY id=2 date=2025-04-09 21:58 qty=100.0 price=88.3925
+BUY id=3 date=2025-04-10 16:28 qty=100.0 price=81.1626
+BUY id=4 date=2025-04-10 17:06 qty=50.0 price=80.1684
+BUY id=5 date=2025-04-10 18:27 qty=50.0 price=76.1726
+BUY id=6 date=2025-04-23 17:15 qty=50.0 price=81.1116
+SELL id=0 date=2025-12-15 16:12 qty=441.0 price=180.154693877551
+  MATCH sell_id=0 buy_id=0 take=1.0 buy_price=95.34 sell_price=180.154693877551 realized=84.81469387755101
+  MATCH sell_id=0 buy_id=1 take=90.0 buy_price=90.977 sell_price=180.154693877551 realized=8025.99244897959
+  MATCH sell_id=0 buy_id=2 take=100.0 buy_price=88.3925 sell_price=180.154693877551 realized=9176.219387755102
+  MATCH sell_id=0 buy_id=3 take=100.0 buy_price=81.1626 sell_price=180.154693877551 realized=9899.209387755101
+  MATCH sell_id=0 buy_id=4 take=50.0 buy_price=80.1684 sell_price=180.154693877551 realized=4999.31469387755
+  MATCH sell_id=0 buy_id=5 take=50.0 buy_price=76.1726 sell_price=180.154693877551 realized=5199.104693877551
+  MATCH sell_id=0 buy_id=6 take=50.0 buy_price=81.1116 sell_price=180.154693877551 realized=4952.154693877551
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1
+BUY 1 -> 90
+BUY 2 -> 100
+BUY 3 -> 100
+BUY 4 -> 50
+BUY 5 -> 50
+BUY 6 -> 50
+--- Sale profits ---
+SALE id=0 date=2025-12-15 16:12 profit=42336.80999999999
+
+Product: AHOLD DELHAIZE
+--- Transactions ---
+BUY id=0 date=2025-12-15 09:00 qty=1.0 price=39.67
+SELL id=0 date=2025-12-15 11:28 qty=1.0 price=29.91
+  MATCH sell_id=0 buy_id=0 take=1.0 buy_price=39.67 sell_price=29.91 realized=-9.760000000000002
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1
+--- Sale profits ---
+SALE id=0 date=2025-12-15 11:28 profit=-9.760000000000002
+
+Product: AIB GROUP PLC
+--- Transactions ---
+BUY id=0 date=2022-09-13 13:43 qty=2000.0 price=2.5999499999999998
+BUY id=1 date=2022-09-13 13:44 qty=1000.0 price=2.598
+SELL id=0 date=2023-12-01 12:06 qty=1300.0 price=4.199
+  MATCH sell_id=0 buy_id=0 take=1300.0 buy_price=2.5999499999999998 sell_price=4.199 realized=2078.7650000000003
+SELL id=1 date=2023-12-01 12:07 qty=1700.0 price=4.202
+  MATCH sell_id=1 buy_id=0 take=700.0 buy_price=2.5999499999999998 sell_price=4.202 realized=1121.4350000000002
+  MATCH sell_id=1 buy_id=1 take=1000.0 buy_price=2.598 sell_price=4.202 realized=1604.0
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1300,700
+BUY 1 -> 0,1000
+--- Sale profits ---
+SALE id=0 date=2023-12-01 12:06 profit=2078.7650000000003
+SALE id=1 date=2023-12-01 12:07 profit=2725.4350000000004
+
+Product: AMAZON.COM INC
+--- Transactions ---
+BUY id=0 date=2022-08-24 11:38 qty=80.0 price=134.02875
+BUY id=1 date=2022-11-07 11:44 qty=100.0 price=92.149
+SELL id=0 date=2022-11-07 20:18 qty=80.0 price=89.95125
+  MATCH sell_id=0 buy_id=0 take=80.0 buy_price=134.02875 sell_price=89.95125 realized=-3526.2
+BUY id=2 date=2022-11-08 11:20 qty=80.0 price=90.99875
+BUY id=3 date=2022-11-10 10:48 qty=100.0 price=86.969
+BUY id=4 date=2022-12-16 11:56 qty=100.0 price=82.399
+BUY id=5 date=2022-12-22 11:05 qty=85.0 price=81.64588235294117
+SELL id=1 date=2025-03-06 21:58 qty=50.0 price=185.922
+  MATCH sell_id=1 buy_id=1 take=50.0 buy_price=92.149 sell_price=185.922 realized=4688.65
+SELL id=2 date=2025-03-31 08:39 qty=100.0 price=175.081
+  MATCH sell_id=2 buy_id=1 take=50.0 buy_price=92.149 sell_price=175.081 realized=4146.599999999999
+  MATCH sell_id=2 buy_id=2 take=50.0 buy_price=90.99875 sell_price=175.081 realized=4204.112499999999
+SELL id=3 date=2025-03-31 09:11 qty=100.0 price=174.421
+  MATCH sell_id=3 buy_id=2 take=30.0 buy_price=90.99875 sell_price=174.421 realized=2502.6674999999996
+  MATCH sell_id=3 buy_id=3 take=70.0 buy_price=86.969 sell_price=174.421 realized=6121.639999999999
+BUY id=6 date=2025-04-10 09:18 qty=100.0 price=173.639
+BUY id=7 date=2025-04-10 09:32 qty=100.0 price=171.979
+SELL id=4 date=2025-12-15 11:17 qty=415.0 price=193.59060240963856
+  MATCH sell_id=4 buy_id=3 take=30.0 buy_price=86.969 sell_price=193.59060240963856 realized=3198.648072289157
+  MATCH sell_id=4 buy_id=4 take=100.0 buy_price=82.399 sell_price=193.59060240963856 realized=11119.160240963856
+  MATCH sell_id=4 buy_id=5 take=85.0 buy_price=81.64588235294117 sell_price=193.59060240963856 realized=9515.301204819278
+  MATCH sell_id=4 buy_id=6 take=100.0 buy_price=173.639 sell_price=193.59060240963856 realized=1995.1602409638554
+  MATCH sell_id=4 buy_id=7 take=100.0 buy_price=171.979 sell_price=193.59060240963856 realized=2161.160240963855
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 80,0,0,0,0
+BUY 1 -> 0,50,50,0,0
+BUY 2 -> 0,0,50,30,0
+BUY 3 -> 0,0,0,70,30
+BUY 4 -> 0,0,0,0,100
+BUY 5 -> 0,0,0,0,85
+BUY 6 -> 0,0,0,0,100
+BUY 7 -> 0,0,0,0,100
+--- Sale profits ---
+SALE id=0 date=2022-11-07 20:18 profit=-3526.2
+SALE id=1 date=2025-03-06 21:58 profit=4688.65
+SALE id=2 date=2025-03-31 08:39 profit=8350.712499999998
+SALE id=3 date=2025-03-31 09:11 profit=8624.307499999999
+SALE id=4 date=2025-12-15 11:17 profit=27989.43
+
+Product: AMRYT PHARMA PLC - AMERICAN DEPOSITARY SHARES
+--- Transactions ---
+BUY id=0 date=2022-01-05 15:30 qty=200.0 price=9.42385
+SELL id=0 date=2023-04-12 10:49 qty=200.0 price=0.0
+  MATCH sell_id=0 buy_id=0 take=200.0 buy_price=9.42385 sell_price=0.0 realized=-1884.77
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 200
+--- Sale profits ---
+SALE id=0 date=2023-04-12 10:49 profit=-1884.77
+
+Product: AMRYT PHARMA PLC - AMERICAN DEPOSITARY SHARES - NON TRADEABLE
+--- Transactions ---
+BUY id=0 date=2023-04-12 qty=1000.0 price=0.0
+BUY id=1 date=2023-04-12 qty=1000.0 price=0.0
+SELL id=0 date=2024-02-27 12:39 qty=1000.0 price=0.0
+  MATCH sell_id=0 buy_id=0 take=1000.0 buy_price=0.0 sell_price=0.0 realized=0.0
+SELL id=1 date=2024-02-27 13:28 qty=1000.0 price=0.0
+  MATCH sell_id=1 buy_id=1 take=1000.0 buy_price=0.0 sell_price=0.0 realized=0.0
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1000,0
+BUY 1 -> 0,1000
+--- Sale profits ---
+SALE id=0 date=2024-02-27 12:39 profit=0.0
+SALE id=1 date=2024-02-27 13:28 profit=0.0
+
+Product: AMUNDI CORE EURO STOXX 50 UCITS ETF EUR ACC
+--- Transactions ---
+BUY id=0 date=2018-02-14 qty=392.0 price=70.00999999999999
+SELL id=0 date=2019-08-20 15:13 qty=392.0 price=74.31663265306122
+  MATCH sell_id=0 buy_id=0 take=392.0 buy_price=70.00999999999999 sell_price=74.31663265306122 realized=1688.2000000000016
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 392
+--- Sale profits ---
+SALE id=0 date=2019-08-20 15:13 profit=1688.2000000000016
+
+Product: AMUNDI ETF EURO STOXX 50 UCITS ETF DR - EUR (C)
+--- Transactions ---
+BUY id=0 date=2017-11-08 15:00 qty=128.0 price=76.245859375
+BUY id=1 date=2017-12-20 12:33 qty=133.0 price=74.51992481203007
+BUY id=2 date=2018-01-05 15:24 qty=131.0 price=75.33030534351145
+SELL id=0 date=2018-02-14 qty=392.0 price=70.00999999999999
+  MATCH sell_id=0 buy_id=0 take=128.0 buy_price=76.245859375 sell_price=70.00999999999999 realized=-798.1900000000005
+  MATCH sell_id=0 buy_id=1 take=133.0 buy_price=74.51992481203007 sell_price=70.00999999999999 realized=-599.8200000000004
+  MATCH sell_id=0 buy_id=2 take=131.0 buy_price=75.33030534351145 sell_price=70.00999999999999 realized=-696.9600000000017
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 128
+BUY 1 -> 133
+BUY 2 -> 131
+--- Sale profits ---
+SALE id=0 date=2018-02-14 profit=-2094.9700000000025
+
+Product: BANK OF IRELAND
+--- Transactions ---
+BUY id=0 date=2017-04-21 09:10 qty=30000.0 price=0.24716533333333335
+SELL id=0 date=2017-07-10 qty=30000.0 price=0.246
+  MATCH sell_id=0 buy_id=0 take=30000.0 buy_price=0.24716533333333335 sell_price=0.246 realized=-34.96000000000055
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 30000
+--- Sale profits ---
+SALE id=0 date=2017-07-10 profit=-34.96000000000055
+
+Product: BANK OF IRELAND GROUP PLC
+--- Transactions ---
+BUY id=0 date=2017-07-10 qty=1000.0 price=7.38
+BUY id=1 date=2018-12-12 09:00 qty=765.0 price=5.105568627450981
+BUY id=2 date=2019-07-10 14:36 qty=2110.0 price=4.689881516587677
+BUY id=3 date=2019-08-21 12:25 qty=5000.0 price=3.2952559999999997
+BUY id=4 date=2020-03-02 09:23 qty=940.0 price=3.38381914893617
+BUY id=5 date=2020-04-01 12:18 qty=5900.0 price=1.6868322033898304
+BUY id=6 date=2020-04-16 12:42 qty=3650.0 price=1.3568602739726028
+BUY id=7 date=2021-06-21 09:00 qty=3000.0 price=4.542936666666667
+SELL id=0 date=2022-09-08 10:55 qty=12000.0 price=6.350766666666666
+  MATCH sell_id=0 buy_id=0 take=1000.0 buy_price=7.38 sell_price=6.350766666666666 realized=-1029.2333333333338
+  MATCH sell_id=0 buy_id=1 take=765.0 buy_price=5.105568627450981 sell_price=6.350766666666666 realized=952.5764999999991
+  MATCH sell_id=0 buy_id=2 take=2110.0 buy_price=4.689881516587677 sell_price=6.350766666666666 realized=3504.4676666666664
+  MATCH sell_id=0 buy_id=3 take=5000.0 buy_price=3.2952559999999997 sell_price=6.350766666666666 realized=15277.553333333331
+  MATCH sell_id=0 buy_id=4 take=940.0 buy_price=3.38381914893617 sell_price=6.350766666666666 realized=2788.930666666666
+  MATCH sell_id=0 buy_id=5 take=2185.0 buy_price=1.6868322033898304 sell_price=6.350766666666666 realized=10190.696802259887
+SELL id=1 date=2024-12-05 09:00 qty=151.0 price=8.41814569536424
+  MATCH sell_id=1 buy_id=5 take=151.0 buy_price=1.6868322033898304 sell_price=8.41814569536424 realized=1016.4283372881358
+SELL id=2 date=2025-03-21 13:00 qty=3000.0 price=11.534
+  MATCH sell_id=2 buy_id=5 take=3000.0 buy_price=1.6868322033898304 sell_price=11.534 realized=29541.503389830512
+SELL id=3 date=2025-03-24 09:26 qty=4000.0 price=11.65425
+  MATCH sell_id=3 buy_id=5 take=564.0 buy_price=1.6868322033898304 sell_price=11.65425 realized=5621.623637288136
+  MATCH sell_id=3 buy_id=6 take=3436.0 buy_price=1.3568602739726028 sell_price=11.65425 realized=35381.83109863014
+SELL id=4 date=2025-03-31 09:03 qty=2000.0 price=10.7285
+  MATCH sell_id=4 buy_id=6 take=214.0 buy_price=1.3568602739726028 sell_price=10.7285 realized=2005.5309013698632
+  MATCH sell_id=4 buy_id=7 take=1786.0 buy_price=4.542936666666667 sell_price=10.7285 realized=11047.416113333335
+SELL id=5 date=2025-03-31 16:37 qty=800.0 price=10.75625
+  MATCH sell_id=5 buy_id=7 take=800.0 buy_price=4.542936666666667 sell_price=10.75625 realized=4970.650666666666
+SELL id=6 date=2025-04-07 09:13 qty=414.0 price=9.192753623188405
+  MATCH sell_id=6 buy_id=7 take=414.0 buy_price=4.542936666666667 sell_price=9.192753623188405 realized=1925.0242199999998
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1000,0,0,0,0,0,0
+BUY 1 -> 765,0,0,0,0,0,0
+BUY 2 -> 2110,0,0,0,0,0,0
+BUY 3 -> 5000,0,0,0,0,0,0
+BUY 4 -> 940,0,0,0,0,0,0
+BUY 5 -> 2185,151,3000,564,0,0,0
+BUY 6 -> 0,0,0,3436,214,0,0
+BUY 7 -> 0,0,0,0,1786,800,414
+--- Sale profits ---
+SALE id=0 date=2022-09-08 10:55 profit=31684.991635593215
+SALE id=1 date=2024-12-05 09:00 profit=1016.4283372881358
+SALE id=2 date=2025-03-21 13:00 profit=29541.503389830512
+SALE id=3 date=2025-03-24 09:26 profit=41003.454735918276
+SALE id=4 date=2025-03-31 09:03 profit=13052.947014703197
+SALE id=5 date=2025-03-31 16:37 profit=4970.650666666666
+SALE id=6 date=2025-04-07 09:13 profit=1925.0242199999998
+
+Product: BENSON HILL INC. COMMON STOCK
+--- Transactions ---
+BUY id=0 date=2023-05-08 15:30 qty=3000.0 price=1.0874933333333334
+SELL id=0 date=2023-12-19 20:50 qty=3000.0 price=0.13155666666666668
+  MATCH sell_id=0 buy_id=0 take=3000.0 buy_price=1.0874933333333334 sell_price=0.13155666666666668 realized=-2867.8100000000004
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 3000
+--- Sale profits ---
+SALE id=0 date=2023-12-19 20:50 profit=-2867.8100000000004
+
+Product: BOEING CO
+--- Transactions ---
+BUY id=0 date=2024-01-31 17:06 qty=2.0 price=196.01
+BUY id=1 date=2024-06-27 08:00 qty=30.0 price=167.11
+BUY id=2 date=2025-04-10 09:24 qty=50.0 price=144.078
+BUY id=3 date=2025-04-24 21:39 qty=50.0 price=155.53799999999998
+BUY id=4 date=2025-05-12 09:50 qty=20.0 price=180.755
+BUY id=5 date=2025-11-20 14:40 qty=50.0 price=162.518
+BUY id=6 date=2025-11-24 20:55 qty=50.0 price=154.59799999999998
+SELL id=0 date=2025-12-15 11:18 qty=122.0 price=174.79999999999998
+  MATCH sell_id=0 buy_id=0 take=2.0 buy_price=196.01 sell_price=174.79999999999998 realized=-42.420000000000016
+  MATCH sell_id=0 buy_id=1 take=30.0 buy_price=167.11 sell_price=174.79999999999998 realized=230.69999999999908
+  MATCH sell_id=0 buy_id=2 take=50.0 buy_price=144.078 sell_price=174.79999999999998 realized=1536.099999999999
+  MATCH sell_id=0 buy_id=3 take=40.0 buy_price=155.53799999999998 sell_price=174.79999999999998 realized=770.48
+SELL id=1 date=2025-12-15 11:18 qty=130.0 price=174.81
+  MATCH sell_id=1 buy_id=3 take=10.0 buy_price=155.53799999999998 sell_price=174.81 realized=192.7200000000002
+  MATCH sell_id=1 buy_id=4 take=20.0 buy_price=180.755 sell_price=174.81 realized=-118.89999999999986
+  MATCH sell_id=1 buy_id=5 take=50.0 buy_price=162.518 sell_price=174.81 realized=614.6000000000001
+  MATCH sell_id=1 buy_id=6 take=50.0 buy_price=154.59799999999998 sell_price=174.81 realized=1010.6000000000008
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 2,0
+BUY 1 -> 30,0
+BUY 2 -> 50,0
+BUY 3 -> 40,10
+BUY 4 -> 0,20
+BUY 5 -> 0,50
+BUY 6 -> 0,50
+--- Sale profits ---
+SALE id=0 date=2025-12-15 11:18 profit=2494.859999999998
+SALE id=1 date=2025-12-15 11:18 profit=1699.0200000000013
+
+Product: BOOST EURO STOXX BANKS 3X LEVERAGE DAILY
+--- Transactions ---
+BUY id=0 date=2022-08-16 09:04 qty=1.0 price=5.53
+BUY id=1 date=2022-08-30 10:34 qty=150.0 price=2.4781333333333335
+BUY id=2 date=2022-09-14 11:58 qty=1000.0 price=3.16
+BUY id=3 date=2023-03-20 17:18 qty=1200.0 price=4.152
+SELL id=0 date=2025-03-21 13:02 qty=1000.0 price=26.527
+  MATCH sell_id=0 buy_id=0 take=1.0 buy_price=5.53 sell_price=26.527 realized=20.997
+  MATCH sell_id=0 buy_id=1 take=150.0 buy_price=2.4781333333333335 sell_price=26.527 realized=3607.3300000000004
+  MATCH sell_id=0 buy_id=2 take=849.0 buy_price=3.16 sell_price=26.527 realized=19838.583000000002
+SELL id=1 date=2025-03-24 09:24 qty=1000.0 price=27.922
+  MATCH sell_id=1 buy_id=2 take=151.0 buy_price=3.16 sell_price=27.922 realized=3739.062
+  MATCH sell_id=1 buy_id=3 take=849.0 buy_price=4.152 sell_price=27.922 realized=20180.73
+SELL id=2 date=2025-03-31 12:54 qty=50.0 price=23.4088
+  MATCH sell_id=2 buy_id=3 take=50.0 buy_price=4.152 sell_price=23.4088 realized=962.8399999999999
+SELL id=3 date=2025-03-31 12:58 qty=300.0 price=23.43
+  MATCH sell_id=3 buy_id=3 take=300.0 buy_price=4.152 sell_price=23.43 realized=5783.4
+SELL id=4 date=2025-12-15 11:26 qty=1.0 price=53.65
+  MATCH sell_id=4 buy_id=3 take=1.0 buy_price=4.152 sell_price=53.65 realized=49.498
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1,0,0,0,0
+BUY 1 -> 150,0,0,0,0
+BUY 2 -> 849,151,0,0,0
+BUY 3 -> 0,849,50,300,1
+--- Sale profits ---
+SALE id=0 date=2025-03-21 13:02 profit=23466.910000000003
+SALE id=1 date=2025-03-24 09:24 profit=23919.792
+SALE id=2 date=2025-03-31 12:54 profit=962.8399999999999
+SALE id=3 date=2025-03-31 12:58 profit=5783.4
+SALE id=4 date=2025-12-15 11:26 profit=49.498
+
+Product: CAIRN
+--- Transactions ---
+BUY id=0 date=2025-10-29 10:22 qty=10000.0 price=1.904175
+SELL id=0 date=2025-12-15 11:29 qty=10000.0 price=2.034157
+  MATCH sell_id=0 buy_id=0 take=10000.0 buy_price=1.904175 sell_price=2.034157 realized=1299.8200000000004
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 10000
+--- Sale profits ---
+SALE id=0 date=2025-12-15 11:29 profit=1299.8200000000004
+
+Product: CAIRN ENERGY
+--- Transactions ---
+BUY id=0 date=2017-04-24 15:53 qty=500.0 price=2.32152
+SELL id=0 date=2021-01-11 qty=500.0 price=2.2982199999999997
+  MATCH sell_id=0 buy_id=0 take=500.0 buy_price=2.32152 sell_price=2.2982199999999997 realized=-11.65000000000016
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 500
+--- Sale profits ---
+SALE id=0 date=2021-01-11 profit=-11.65000000000016
+
+Product: CAPRICORN ENERG
+--- Transactions ---
+BUY id=0 date=2023-05-16 qty=199.0 price=5.2631155778894465
+BUY id=1 date=2023-10-06 qty=132.0 price=3.1108333333333333
+SELL id=0 date=2023-10-06 qty=199.0 price=2.073869346733668
+  MATCH sell_id=0 buy_id=0 take=199.0 buy_price=5.2631155778894465 sell_price=2.073869346733668 realized=-634.6599999999999
+SELL id=1 date=2024-05-24 qty=132.0 price=2.2937878787878785
+  MATCH sell_id=1 buy_id=1 take=132.0 buy_price=3.1108333333333333 sell_price=2.2937878787878785 realized=-107.85000000000004
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 199,0
+BUY 1 -> 0,132
+--- Sale profits ---
+SALE id=0 date=2023-10-06 profit=-634.6599999999999
+SALE id=1 date=2024-05-24 profit=-107.85000000000004
+
+Product: CAPRICORN ENERGY PLC
+--- Transactions ---
+BUY id=0 date=2021-01-11 qty=423.0 price=2.7160756501182037
+SELL id=0 date=2023-05-16 qty=423.0 price=2.4811820330969265
+  MATCH sell_id=0 buy_id=0 take=423.0 buy_price=2.7160756501182037 sell_price=2.4811820330969265 realized=-99.36000000000026
+BUY id=1 date=2024-05-24 qty=103.0 price=2.922718446601942
+SELL id=1 date=2025-10-27 11:11 qty=103.0 price=2.2571844660194174
+  MATCH sell_id=1 buy_id=1 take=103.0 buy_price=2.922718446601942 sell_price=2.2571844660194174 realized=-68.55000000000001
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 423,0
+BUY 1 -> 0,103
+--- Sale profits ---
+SALE id=0 date=2023-05-16 profit=-99.36000000000026
+SALE id=1 date=2025-10-27 11:11 profit=-68.55000000000001
+
+Product: CLEAN ENERGY FUELS COR
+--- Transactions ---
+BUY id=0 date=2021-08-10 15:30 qty=500.0 price=6.6967
+BUY id=1 date=2023-04-11 20:27 qty=1000.0 price=4.13443
+SELL id=0 date=2023-12-19 20:51 qty=1500.0 price=3.4066133333333335
+  MATCH sell_id=0 buy_id=0 take=500.0 buy_price=6.6967 sell_price=3.4066133333333335 realized=-1645.0433333333333
+  MATCH sell_id=0 buy_id=1 take=1000.0 buy_price=4.13443 sell_price=3.4066133333333335 realized=-727.8166666666666
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 500
+BUY 1 -> 1000
+--- Sale profits ---
+SALE id=0 date=2023-12-19 20:51 profit=-2372.8599999999997
+
+Product: CRH
+--- Transactions ---
+BUY id=0 date=2023-09-18 qty=473.0 price=0.0
+SELL id=0 date=2025-03-31 09:05 qty=200.0 price=80.29145
+  MATCH sell_id=0 buy_id=0 take=200.0 buy_price=0.0 sell_price=80.29145 realized=16058.289999999999
+SELL id=1 date=2025-12-15 11:30 qty=273.0 price=107.99241758241759
+  MATCH sell_id=1 buy_id=0 take=273.0 buy_price=0.0 sell_price=107.99241758241759 realized=29481.93
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 200,273
+--- Sale profits ---
+SALE id=0 date=2025-03-31 09:05 profit=16058.289999999999
+SALE id=1 date=2025-12-15 11:30 profit=29481.93
+
+Product: CRH PLC ORD
+--- Transactions ---
+BUY id=0 date=2022-06-15 13:21 qty=1.0 price=37.16
+SELL id=0 date=2022-06-15 13:23 qty=1.0 price=32.2
+  MATCH sell_id=0 buy_id=0 take=1.0 buy_price=37.16 sell_price=32.2 realized=-4.959999999999994
+BUY id=1 date=2022-06-15 13:25 qty=48.0 price=34.772083333333335
+BUY id=2 date=2022-06-22 10:33 qty=25.0 price=32.1648
+BUY id=3 date=2022-07-01 13:36 qty=200.0 price=32.7825
+BUY id=4 date=2022-07-01 13:38 qty=200.0 price=32.7975
+SELL id=1 date=2023-09-18 qty=473.0 price=0.0
+  MATCH sell_id=1 buy_id=1 take=48.0 buy_price=34.772083333333335 sell_price=0.0 realized=-1669.06
+  MATCH sell_id=1 buy_id=2 take=25.0 buy_price=32.1648 sell_price=0.0 realized=-804.12
+  MATCH sell_id=1 buy_id=3 take=200.0 buy_price=32.7825 sell_price=0.0 realized=-6556.5
+  MATCH sell_id=1 buy_id=4 take=200.0 buy_price=32.7975 sell_price=0.0 realized=-6559.5
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1,0
+BUY 1 -> 0,48
+BUY 2 -> 0,25
+BUY 3 -> 0,200
+BUY 4 -> 0,200
+--- Sale profits ---
+SALE id=0 date=2022-06-15 13:23 profit=-4.959999999999994
+SALE id=1 date=2023-09-18 profit=-15589.18
+
+Product: ELI LILLY AND COMPANY
+--- Transactions ---
+BUY id=0 date=2023-12-04 15:30 qty=3.0 price=538.4333333333333
+BUY id=1 date=2023-12-19 21:01 qty=10.0 price=527.317
+BUY id=2 date=2024-01-23 15:30 qty=1.0 price=579.33
+BUY id=3 date=2024-01-30 15:32 qty=6.0 price=594.6433333333333
+BUY id=4 date=2024-01-30 20:57 qty=2.0 price=595.73
+SELL id=0 date=2025-12-15 16:14 qty=22.0 price=890.1727272727272
+  MATCH sell_id=0 buy_id=0 take=3.0 buy_price=538.4333333333333 sell_price=890.1727272727272 realized=1055.2181818181818
+  MATCH sell_id=0 buy_id=1 take=10.0 buy_price=527.317 sell_price=890.1727272727272 realized=3628.557272727272
+  MATCH sell_id=0 buy_id=2 take=1.0 buy_price=579.33 sell_price=890.1727272727272 realized=310.8427272727272
+  MATCH sell_id=0 buy_id=3 take=6.0 buy_price=594.6433333333333 sell_price=890.1727272727272 realized=1773.1763636363635
+  MATCH sell_id=0 buy_id=4 take=2.0 buy_price=595.73 sell_price=890.1727272727272 realized=588.8854545454544
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 3
+BUY 1 -> 10
+BUY 2 -> 1
+BUY 3 -> 6
+BUY 4 -> 2
+--- Sale profits ---
+SALE id=0 date=2025-12-15 16:14 profit=7356.6799999999985
+
+Product: ESTEE LAUDER COMPANIES
+--- Transactions ---
+BUY id=0 date=2025-05-16 19:27 qty=30.0 price=58.78966666666667
+SELL id=0 date=2025-12-15 16:15 qty=30.0 price=87.319
+  MATCH sell_id=0 buy_id=0 take=30.0 buy_price=58.78966666666667 sell_price=87.319 realized=855.88
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 30
+--- Sale profits ---
+SALE id=0 date=2025-12-15 16:15 profit=855.88
+
+Product: ETFLAB EURO STOXX 50
+--- Transactions ---
+BUY id=0 date=2018-02-16 13:25 qty=800.0 price=34.555
+BUY id=1 date=2018-02-23 09:04 qty=375.0 price=34.69498666666667
+SELL id=0 date=2019-07-25 09:04 qty=1175.0 price=35.98
+  MATCH sell_id=0 buy_id=0 take=800.0 buy_price=34.555 sell_price=35.98 realized=1139.9999999999977
+  MATCH sell_id=0 buy_id=1 take=375.0 buy_price=34.69498666666667 sell_price=35.98 realized=481.87999999999676
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 800
+BUY 1 -> 375
+--- Sale profits ---
+SALE id=0 date=2019-07-25 09:04 profit=1621.8799999999944
+
+Product: FLUTTER ENTERTAINMENT PLC
+--- Transactions ---
+BUY id=0 date=2023-05-29 09:56 qty=8.0 price=184.5875
+BUY id=1 date=2024-07-15 15:21 qty=8.0 price=0.0
+SELL id=0 date=2024-07-15 15:21 qty=8.0 price=0.0
+  MATCH sell_id=0 buy_id=0 take=8.0 buy_price=184.5875 sell_price=0.0 realized=-1476.7
+BUY id=2 date=2025-05-02 15:44 qty=20.0 price=217.573
+BUY id=3 date=2025-05-14 15:30 qty=30.0 price=215.71599999999998
+BUY id=4 date=2025-05-14 15:30 qty=20.0 price=215.74899999999997
+BUY id=5 date=2025-06-05 15:30 qty=20.0 price=212.5645
+SELL id=1 date=2025-12-15 16:13 qty=98.0 price=185.06785714285715
+  MATCH sell_id=1 buy_id=1 take=8.0 buy_price=0.0 sell_price=185.06785714285715 realized=1480.5428571428572
+  MATCH sell_id=1 buy_id=2 take=20.0 buy_price=217.573 sell_price=185.06785714285715 realized=-650.1028571428571
+  MATCH sell_id=1 buy_id=3 take=30.0 buy_price=215.71599999999998 sell_price=185.06785714285715 realized=-919.4442857142849
+  MATCH sell_id=1 buy_id=4 take=20.0 buy_price=215.74899999999997 sell_price=185.06785714285715 realized=-613.6228571428563
+  MATCH sell_id=1 buy_id=5 take=20.0 buy_price=212.5645 sell_price=185.06785714285715 realized=-549.9328571428572
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 8,0
+BUY 1 -> 0,8
+BUY 2 -> 0,20
+BUY 3 -> 0,30
+BUY 4 -> 0,20
+BUY 5 -> 0,20
+--- Sale profits ---
+SALE id=0 date=2024-07-15 15:21 profit=-1476.7
+SALE id=1 date=2025-12-15 16:13 profit=-1252.5599999999984
+
+Product: HANETF ICLIMA GLOBAL DECARBONISATION ENABLERS UCITS ETF
+--- Transactions ---
+BUY id=0 date=2024-02-27 qty=412.0 price=5.610995145631068
+SELL id=0 date=2025-12-15 11:24 qty=412.0 price=6.295728155339806
+  MATCH sell_id=0 buy_id=0 take=412.0 buy_price=5.610995145631068 sell_price=6.295728155339806 realized=282.1100000000002
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 412
+--- Sale profits ---
+SALE id=0 date=2025-12-15 11:24 profit=282.1100000000002
+
+Product: HANETF S&P GLOBAL CLEAN ENERGY SELECT HANZEROÂ„¢ UCITS ETF ACC
+--- Transactions ---
+BUY id=0 date=2022-05-19 09:04 qty=600.0 price=5.0841666666666665
+SELL id=0 date=2024-02-27 qty=600.0 price=3.8575
+  MATCH sell_id=0 buy_id=0 take=600.0 buy_price=5.0841666666666665 sell_price=3.8575 realized=-736.0
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 600
+--- Sale profits ---
+SALE id=0 date=2024-02-27 profit=-736.0
+
+Product: HIBERNIA REIT PLC
+--- Transactions ---
+BUY id=0 date=2018-01-17 09:40 qty=2666.0 price=1.4773405851462866
+BUY id=1 date=2020-03-18 15:18 qty=12700.0 price=0.7674637795275592
+BUY id=2 date=2021-04-12 09:03 qty=10000.0 price=1.16078
+SELL id=0 date=2022-06-30 09:21 qty=25366.0 price=0.0
+  MATCH sell_id=0 buy_id=0 take=2666.0 buy_price=1.4773405851462866 sell_price=0.0 realized=-3938.59
+  MATCH sell_id=0 buy_id=1 take=12700.0 buy_price=0.7674637795275592 sell_price=0.0 realized=-9746.79
+  MATCH sell_id=0 buy_id=2 take=10000.0 buy_price=1.16078 sell_price=0.0 realized=-11607.8
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 2666
+BUY 1 -> 12700
+BUY 2 -> 10000
+--- Sale profits ---
+SALE id=0 date=2022-06-30 09:21 profit=-25293.18
+
+Product: INTEL CORP
+--- Transactions ---
+BUY id=0 date=2024-09-30 14:23 qty=1.0 price=24.88
+BUY id=1 date=2024-11-13 10:35 qty=150.0 price=22.596
+BUY id=2 date=2024-12-05 16:44 qty=70.0 price=19.991714285714288
+BUY id=3 date=2024-12-09 13:25 qty=165.0 price=19.803636363636365
+BUY id=4 date=2024-12-10 08:00 qty=175.0 price=19.672285714285714
+BUY id=5 date=2025-04-25 07:30 qty=500.0 price=17.9458
+BUY id=6 date=2025-08-15 13:52 qty=300.0 price=20.872999999999998
+SELL id=0 date=2025-12-15 11:21 qty=1000.0 price=32.546099999999996
+  MATCH sell_id=0 buy_id=0 take=1.0 buy_price=24.88 sell_price=32.546099999999996 realized=7.666099999999997
+  MATCH sell_id=0 buy_id=1 take=150.0 buy_price=22.596 sell_price=32.546099999999996 realized=1492.5149999999994
+  MATCH sell_id=0 buy_id=2 take=70.0 buy_price=19.991714285714288 sell_price=32.546099999999996 realized=878.8069999999996
+  MATCH sell_id=0 buy_id=3 take=165.0 buy_price=19.803636363636365 sell_price=32.546099999999996 realized=2102.506499999999
+  MATCH sell_id=0 buy_id=4 take=175.0 buy_price=19.672285714285714 sell_price=32.546099999999996 realized=2252.917499999999
+  MATCH sell_id=0 buy_id=5 take=439.0 buy_price=17.9458 sell_price=32.546099999999996 realized=6409.531699999999
+SELL id=1 date=2025-12-15 11:22 qty=361.0 price=32.55
+  MATCH sell_id=1 buy_id=5 take=61.0 buy_price=17.9458 sell_price=32.55 realized=890.8562
+  MATCH sell_id=1 buy_id=6 take=300.0 buy_price=20.872999999999998 sell_price=32.55 realized=3503.1
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1,0
+BUY 1 -> 150,0
+BUY 2 -> 70,0
+BUY 3 -> 165,0
+BUY 4 -> 175,0
+BUY 5 -> 439,61
+BUY 6 -> 0,300
+--- Sale profits ---
+SALE id=0 date=2025-12-15 11:21 profit=13143.943799999997
+SALE id=1 date=2025-12-15 11:22 profit=4393.9562
+
+Product: INVESCO JPX-NIKKEI 400 UCITS ETF
+--- Transactions ---
+BUY id=0 date=2023-06-15 16:11 qty=75.0 price=23.24
+SELL id=0 date=2024-01-30 09:42 qty=75.0 price=26.06
+  MATCH sell_id=0 buy_id=0 take=75.0 buy_price=23.24 sell_price=26.06 realized=211.50000000000003
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 75
+--- Sale profits ---
+SALE id=0 date=2024-01-30 09:42 profit=211.50000000000003
+
+Product: ISHARES CORE DAX UCITS ETF (DE)
+--- Transactions ---
+BUY id=0 date=2017-12-13 11:02 qty=86.0 price=114.41
+BUY id=1 date=2017-12-19 10:57 qty=86.0 price=115.81
+BUY id=2 date=2017-12-28 12:43 qty=87.0 price=113.49
+SELL id=0 date=2022-08-24 09:04 qty=100.0 price=111.035
+  MATCH sell_id=0 buy_id=0 take=86.0 buy_price=114.41 sell_price=111.035 realized=-290.25
+  MATCH sell_id=0 buy_id=1 take=14.0 buy_price=115.81 sell_price=111.035 realized=-66.85000000000008
+SELL id=1 date=2023-09-19 09:46 qty=80.0 price=131.5025
+  MATCH sell_id=1 buy_id=1 take=72.0 buy_price=115.81 sell_price=131.5025 realized=1129.8599999999997
+  MATCH sell_id=1 buy_id=2 take=8.0 buy_price=113.49 sell_price=131.5025 realized=144.10000000000002
+SELL id=2 date=2025-04-07 15:09 qty=60.0 price=164.95
+  MATCH sell_id=2 buy_id=2 take=60.0 buy_price=113.49 sell_price=164.95 realized=3087.5999999999995
+SELL id=3 date=2025-12-15 11:25 qty=19.0 price=200.9921052631579
+  MATCH sell_id=3 buy_id=2 take=19.0 buy_price=113.49 sell_price=200.9921052631579 realized=1662.5400000000002
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 86,0,0,0
+BUY 1 -> 14,72,0,0
+BUY 2 -> 0,8,60,19
+--- Sale profits ---
+SALE id=0 date=2022-08-24 09:04 profit=-357.1000000000001
+SALE id=1 date=2023-09-19 09:46 profit=1273.9599999999996
+SALE id=2 date=2025-04-07 15:09 profit=3087.5999999999995
+SALE id=3 date=2025-12-15 11:25 profit=1662.5400000000002
+
+Product: JUPITER FND
+--- Transactions ---
+BUY id=0 date=2022-07-04 09:00 qty=20.0 price=1.847
+BUY id=1 date=2022-07-04 10:29 qty=2000.0 price=1.6284100000000001
+SELL id=0 date=2024-12-09 13:18 qty=2020.0 price=1.052559405940594
+  MATCH sell_id=0 buy_id=0 take=20.0 buy_price=1.847 sell_price=1.052559405940594 realized=-15.888811881188118
+  MATCH sell_id=0 buy_id=1 take=2000.0 buy_price=1.6284100000000001 sell_price=1.052559405940594 realized=-1151.701188118812
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 20
+BUY 1 -> 2000
+--- Sale profits ---
+SALE id=0 date=2024-12-09 13:18 profit=-1167.5900000000001
+
+Product: KENMARE RES.
+--- Transactions ---
+BUY id=0 date=2017-04-21 10:30 qty=300.0 price=3.597366666666667
+SELL id=0 date=2024-01-30 09:42 qty=300.0 price=3.5592666666666664
+  MATCH sell_id=0 buy_id=0 take=300.0 buy_price=3.597366666666667 sell_price=3.5592666666666664 realized=-11.43000000000014
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 300
+--- Sale profits ---
+SALE id=0 date=2024-01-30 09:42 profit=-11.43000000000014
+
+Product: KINGSPAN GRP PLC
+--- Transactions ---
+BUY id=0 date=2022-07-06 09:10 qty=200.0 price=55.0125
+BUY id=1 date=2022-09-05 13:18 qty=125.0 price=57.044
+BUY id=2 date=2022-09-08 10:59 qty=300.0 price=57.59
+SELL id=0 date=2022-11-08 11:09 qty=625.0 price=53.3952
+  MATCH sell_id=0 buy_id=0 take=200.0 buy_price=55.0125 sell_price=53.3952 realized=-323.46000000000004
+  MATCH sell_id=0 buy_id=1 take=125.0 buy_price=57.044 sell_price=53.3952 realized=-456.0999999999993
+  MATCH sell_id=0 buy_id=2 take=300.0 buy_price=57.59 sell_price=53.3952 realized=-1258.4400000000003
+BUY id=3 date=2022-11-08 11:22 qty=625.0 price=53.2648
+SELL id=1 date=2024-10-01 14:20 qty=1.0 price=82.0
+  MATCH sell_id=1 buy_id=3 take=1.0 buy_price=53.2648 sell_price=82.0 realized=28.7352
+SELL id=2 date=2024-11-14 09:00 qty=1.0 price=71.75
+  MATCH sell_id=2 buy_id=3 take=1.0 buy_price=53.2648 sell_price=71.75 realized=18.4852
+SELL id=3 date=2025-04-08 09:00 qty=1.0 price=65.5
+  MATCH sell_id=3 buy_id=3 take=1.0 buy_price=53.2648 sell_price=65.5 realized=12.235199999999999
+SELL id=4 date=2025-12-15 11:27 qty=622.0 price=74.8951768488746
+  MATCH sell_id=4 buy_id=3 take=622.0 buy_price=53.2648 sell_price=74.8951768488746 realized=13454.0944
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 200,0,0,0,0
+BUY 1 -> 125,0,0,0,0
+BUY 2 -> 300,0,0,0,0
+BUY 3 -> 0,1,1,1,622
+--- Sale profits ---
+SALE id=0 date=2022-11-08 11:09 profit=-2037.9999999999995
+SALE id=1 date=2024-10-01 14:20 profit=28.7352
+SALE id=2 date=2024-11-14 09:00 profit=18.4852
+SALE id=3 date=2025-04-08 09:00 profit=12.235199999999999
+SALE id=4 date=2025-12-15 11:27 profit=13454.0944
+
+Product: MANCHESTER UNITED PLC
+--- Transactions ---
+BUY id=0 date=2023-11-29 21:19 qty=5.0 price=18.54
+SELL id=0 date=2025-11-05 21:43 qty=5.0 price=12.8
+  MATCH sell_id=0 buy_id=0 take=5.0 buy_price=18.54 sell_price=12.8 realized=-28.699999999999992
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 5
+--- Sale profits ---
+SALE id=0 date=2025-11-05 21:43 profit=-28.699999999999992
+
+Product: MARKS & SP.
+--- Transactions ---
+BUY id=0 date=2018-01-11 17:22 qty=883.0 price=3.411687429218573
+SELL id=0 date=2018-11-15 09:59 qty=883.0 price=3.353035107587769
+  MATCH sell_id=0 buy_id=0 take=883.0 buy_price=3.411687429218573 sell_price=3.353035107587769 realized=-51.789999999999665
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 883
+--- Sale profits ---
+SALE id=0 date=2018-11-15 09:59 profit=-51.789999999999665
+
+Product: META PLATFORMS INC
+--- Transactions ---
+BUY id=0 date=2018-04-09 17:29 qty=30.0 price=129.25966666666667
+SELL id=0 date=2018-12-11 17:45 qty=30.0 price=126.01833333333335
+  MATCH sell_id=0 buy_id=0 take=30.0 buy_price=129.25966666666667 sell_price=126.01833333333335 realized=-97.2399999999999
+BUY id=1 date=2022-11-03 14:30 qty=30.0 price=92.37466666666666
+SELL id=1 date=2025-03-24 14:32 qty=10.0 price=567.0609999999999
+  MATCH sell_id=1 buy_id=1 take=10.0 buy_price=92.37466666666666 sell_price=567.0609999999999 realized=4746.863333333333
+BUY id=2 date=2025-12-15 16:14 qty=8.0 price=545.73625
+BUY id=3 date=2025-12-15 16:14 qty=12.0 price=545.9025
+SELL id=2 date=2025-12-15 17:04 qty=40.0 price=548.75875
+  MATCH sell_id=2 buy_id=1 take=20.0 buy_price=92.37466666666666 sell_price=548.75875 realized=9127.681666666665
+  MATCH sell_id=2 buy_id=2 take=8.0 buy_price=545.73625 sell_price=548.75875 realized=24.17999999999938
+  MATCH sell_id=2 buy_id=3 take=12.0 buy_price=545.9025 sell_price=548.75875 realized=34.27499999999918
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 30,0,0
+BUY 1 -> 0,10,20
+BUY 2 -> 0,0,8
+BUY 3 -> 0,0,12
+--- Sale profits ---
+SALE id=0 date=2018-12-11 17:45 profit=-97.2399999999999
+SALE id=1 date=2025-03-24 14:32 profit=4746.863333333333
+SALE id=2 date=2025-12-15 17:04 profit=9186.136666666664
+
+Product: NETFLIX INC
+--- Transactions ---
+BUY id=0 date=2022-04-29 08:00 qty=20.0 price=188.675
+SELL id=0 date=2025-11-05 20:53 qty=20.0 price=950.305
+  MATCH sell_id=0 buy_id=0 take=20.0 buy_price=188.675 sell_price=950.305 realized=15232.599999999999
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 20
+--- Sale profits ---
+SALE id=0 date=2025-11-05 20:53 profit=15232.599999999999
+
+Product: NOVO NORDISK A/S
+--- Transactions ---
+BUY id=0 date=2023-08-14 17:46 qty=30.0 price=167.29
+BUY id=1 date=2023-08-15 08:00 qty=30.0 price=164.65
+BUY id=2 date=2023-09-13 qty=120.0 price=92.5
+SELL id=0 date=2023-09-13 qty=60.0 price=185.0
+  MATCH sell_id=0 buy_id=0 take=30.0 buy_price=167.29 sell_price=185.0 realized=531.3000000000002
+  MATCH sell_id=0 buy_id=1 take=30.0 buy_price=164.65 sell_price=185.0 realized=610.4999999999998
+BUY id=3 date=2023-09-28 11:29 qty=19.0 price=87.30526315789473
+BUY id=4 date=2023-10-20 17:23 qty=3.0 price=92.00999999999999
+BUY id=5 date=2023-11-06 08:23 qty=1.0 price=95.9
+BUY id=6 date=2025-04-29 07:54 qty=100.0 price=55.199
+BUY id=7 date=2025-05-02 11:01 qty=100.0 price=60.528999999999996
+BUY id=8 date=2025-05-02 15:19 qty=100.0 price=61.50899999999999
+SELL id=1 date=2025-10-27 11:12 qty=443.0 price=45.22119638826185
+  MATCH sell_id=1 buy_id=2 take=120.0 buy_price=92.5 sell_price=45.22119638826185 realized=-5673.456433408578
+  MATCH sell_id=1 buy_id=3 take=19.0 buy_price=87.30526315789473 sell_price=45.22119638826185 realized=-799.5972686230247
+  MATCH sell_id=1 buy_id=4 take=3.0 buy_price=92.00999999999999 sell_price=45.22119638826185 realized=-140.36641083521442
+  MATCH sell_id=1 buy_id=5 take=1.0 buy_price=95.9 sell_price=45.22119638826185 realized=-50.678803611738154
+  MATCH sell_id=1 buy_id=6 take=100.0 buy_price=55.199 sell_price=45.22119638826185 realized=-997.7803611738146
+  MATCH sell_id=1 buy_id=7 take=100.0 buy_price=60.528999999999996 sell_price=45.22119638826185 realized=-1530.7803611738145
+  MATCH sell_id=1 buy_id=8 take=100.0 buy_price=61.50899999999999 sell_price=45.22119638826185 realized=-1628.780361173814
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 30,0
+BUY 1 -> 30,0
+BUY 2 -> 0,120
+BUY 3 -> 0,19
+BUY 4 -> 0,3
+BUY 5 -> 0,1
+BUY 6 -> 0,100
+BUY 7 -> 0,100
+BUY 8 -> 0,100
+--- Sale profits ---
+SALE id=0 date=2023-09-13 profit=1141.8
+SALE id=1 date=2025-10-27 11:12 profit=-10821.439999999997
+
+Product: PFIZER INC. COMMON ST
+--- Transactions ---
+BUY id=0 date=2020-11-11 15:30 qty=10.0 price=33.239
+SELL id=0 date=2024-01-30 15:30 qty=10.0 price=25.593
+  MATCH sell_id=0 buy_id=0 take=10.0 buy_price=33.239 sell_price=25.593 realized=-76.45999999999998
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 10
+--- Sale profits ---
+SALE id=0 date=2024-01-30 15:30 profit=-76.45999999999998
+
+Product: ROBINHOOD MARKETS INC
+--- Transactions ---
+BUY id=0 date=2021-08-05 20:06 qty=200.0 price=50.05
+BUY id=1 date=2021-11-12 15:30 qty=50.0 price=30.386599999999998
+SELL id=0 date=2022-09-27 19:44 qty=249.0 price=9.862409638554215
+  MATCH sell_id=0 buy_id=0 take=200.0 buy_price=50.05 sell_price=9.862409638554215 realized=-8037.518072289157
+  MATCH sell_id=0 buy_id=1 take=49.0 buy_price=30.386599999999998 sell_price=9.862409638554215 realized=-1005.6853277108434
+SELL id=1 date=2023-12-19 21:41 qty=1.0 price=9.92
+  MATCH sell_id=1 buy_id=1 take=1.0 buy_price=30.386599999999998 sell_price=9.92 realized=-20.4666
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 200,0
+BUY 1 -> 49,1
+--- Sale profits ---
+SALE id=0 date=2022-09-27 19:44 profit=-9043.2034
+SALE id=1 date=2023-12-19 21:41 profit=-20.4666
+
+Product: RYANAIR HOLDINGS PLC
+--- Transactions ---
+BUY id=0 date=2017-12-19 10:59 qty=300.0 price=15.262766666666666
+BUY id=1 date=2018-11-16 09:00 qty=300.0 price=12.013633333333333
+BUY id=2 date=2022-07-05 09:00 qty=500.0 price=11.47
+BUY id=3 date=2022-07-05 10:32 qty=300.0 price=11.363333333333333
+BUY id=4 date=2024-07-24 10:31 qty=80.0 price=13.9875
+SELL id=0 date=2025-03-31 09:07 qty=1000.0 price=19.397
+  MATCH sell_id=0 buy_id=0 take=300.0 buy_price=15.262766666666666 sell_price=19.397 realized=1240.2699999999998
+  MATCH sell_id=0 buy_id=1 take=300.0 buy_price=12.013633333333333 sell_price=19.397 realized=2215.0099999999998
+  MATCH sell_id=0 buy_id=2 take=400.0 buy_price=11.47 sell_price=19.397 realized=3170.7999999999993
+SELL id=1 date=2025-04-08 15:47 qty=250.0 price=18.398
+  MATCH sell_id=1 buy_id=2 take=100.0 buy_price=11.47 sell_price=18.398 realized=692.8
+  MATCH sell_id=1 buy_id=3 take=150.0 buy_price=11.363333333333333 sell_price=18.398 realized=1055.2
+SELL id=2 date=2025-12-15 11:23 qty=230.0 price=30.036956521739132
+  MATCH sell_id=2 buy_id=3 take=150.0 buy_price=11.363333333333333 sell_price=30.036956521739132 realized=2801.04347826087
+  MATCH sell_id=2 buy_id=4 take=80.0 buy_price=13.9875 sell_price=30.036956521739132 realized=1283.9565217391305
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 300,0,0
+BUY 1 -> 300,0,0
+BUY 2 -> 400,100,0
+BUY 3 -> 0,150,150
+BUY 4 -> 0,0,80
+--- Sale profits ---
+SALE id=0 date=2025-03-31 09:07 profit=6626.079999999999
+SALE id=1 date=2025-04-08 15:47 profit=1748.0
+SALE id=2 date=2025-12-15 11:23 profit=4085.0000000000005
+
+Product: SALESFORCE.COM INC COM
+--- Transactions ---
+BUY id=0 date=2022-03-02 15:30 qty=10.0 price=194.663
+BUY id=1 date=2022-07-05 15:30 qty=7.0 price=161.9157142857143
+BUY id=2 date=2022-11-28 15:30 qty=50.0 price=145.64260000000002
+SELL id=0 date=2024-12-09 15:30 qty=10.0 price=341.706
+  MATCH sell_id=0 buy_id=0 take=10.0 buy_price=194.663 sell_price=341.706 realized=1470.43
+SELL id=1 date=2025-12-15 16:13 qty=57.0 price=216.36087719298246
+  MATCH sell_id=1 buy_id=1 take=7.0 buy_price=161.9157142857143 sell_price=216.36087719298246 realized=381.1161403508771
+  MATCH sell_id=1 buy_id=2 take=50.0 buy_price=145.64260000000002 sell_price=216.36087719298246 realized=3535.913859649122
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 10,0
+BUY 1 -> 0,7
+BUY 2 -> 0,50
+--- Sale profits ---
+SALE id=0 date=2024-12-09 15:30 profit=1470.43
+SALE id=1 date=2025-12-15 16:13 profit=3917.0299999999993
+
+Product: SMITH(DS)
+--- Transactions ---
+BUY id=0 date=2019-06-14 15:54 qty=440.0 price=3.959295454545454
+SELL id=0 date=2024-01-30 09:00 qty=440.0 price=3.4079545454545452
+  MATCH sell_id=0 buy_id=0 take=440.0 buy_price=3.959295454545454 sell_price=3.4079545454545452 realized=-242.58999999999992
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 440
+--- Sale profits ---
+SALE id=0 date=2024-01-30 09:00 profit=-242.58999999999992
+
+Product: SYNCONA LIMITED
+--- Transactions ---
+BUY id=0 date=2022-02-24 17:35 qty=1000.0 price=2.0919899999999996
+SELL id=0 date=2024-12-09 13:16 qty=1000.0 price=1.23227
+  MATCH sell_id=0 buy_id=0 take=1000.0 buy_price=2.0919899999999996 sell_price=1.23227 realized=-859.7199999999996
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1000
+--- Sale profits ---
+SALE id=0 date=2024-12-09 13:16 profit=-859.7199999999996
+
+Product: TWITTER INC
+--- Transactions ---
+BUY id=0 date=2022-02-07 08:00 qty=200.0 price=32.744499999999995
+SELL id=0 date=2022-09-05 11:43 qty=160.0 price=38.695625
+  MATCH sell_id=0 buy_id=0 take=160.0 buy_price=32.744499999999995 sell_price=38.695625 realized=952.1800000000007
+SELL id=1 date=2022-11-02 07:01 qty=40.0 price=0.0
+  MATCH sell_id=1 buy_id=0 take=40.0 buy_price=32.744499999999995 sell_price=0.0 realized=-1309.7799999999997
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 160,40
+--- Sale profits ---
+SALE id=0 date=2022-09-05 11:43 profit=952.1800000000007
+SALE id=1 date=2022-11-02 07:01 profit=-1309.7799999999997
+
+Product: VANGUARD FTSE AW
+--- Transactions ---
+BUY id=0 date=2025-12-15 09:09 qty=1.0 price=144.0
+SELL id=0 date=2025-12-15 11:26 qty=1.0 price=138.24
+  MATCH sell_id=0 buy_id=0 take=1.0 buy_price=144.0 sell_price=138.24 realized=-5.759999999999991
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1
+--- Sale profits ---
+SALE id=0 date=2025-12-15 11:26 profit=-5.759999999999991
+
+Product: VIATRIS INC. - COMMON STOCK
+--- Transactions ---
+BUY id=0 date=2020-11-17 qty=1.0 price=0.0
+SELL id=0 date=2025-10-27 14:30 qty=1.0 price=6.89
+  MATCH sell_id=0 buy_id=0 take=1.0 buy_price=0.0 sell_price=6.89 realized=6.89
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 1
+--- Sale profits ---
+SALE id=0 date=2025-10-27 14:30 profit=6.89
+
+Product: WISDOMTREE ETHEREUM
+--- Transactions ---
+BUY id=0 date=2022-07-04 09:04 qty=100.0 price=9.9575
+BUY id=1 date=2022-07-05 10:34 qty=100.0 price=10.950999999999999
+BUY id=2 date=2022-07-08 15:28 qty=44.0 price=11.802727272727275
+SELL id=0 date=2025-12-15 11:26 qty=244.0 price=26.489713114754096
+  MATCH sell_id=0 buy_id=0 take=100.0 buy_price=9.9575 sell_price=26.489713114754096 realized=1653.2213114754097
+  MATCH sell_id=0 buy_id=1 take=100.0 buy_price=10.950999999999999 sell_price=26.489713114754096 realized=1553.8713114754098
+  MATCH sell_id=0 buy_id=2 take=44.0 buy_price=11.802727272727275 sell_price=26.489713114754096 realized=646.2273770491802
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 100
+BUY 1 -> 100
+BUY 2 -> 44
+--- Sale profits ---
+SALE id=0 date=2025-12-15 11:26 profit=3853.3199999999997
+
+Product: WT ISEQ20 ETF E
+--- Transactions ---
+BUY id=0 date=2017-12-21 13:10 qty=689.0 price=14.165732946298984
+BUY id=1 date=2018-01-02 11:25 qty=665.0 price=14.255864661654135
+BUY id=2 date=2018-01-02 11:29 qty=666.0 price=14.265855855855856
+BUY id=3 date=2018-02-20 09:29 qty=710.0 price=13.671549295774646
+BUY id=4 date=2018-04-03 09:00 qty=714.0 price=13.327464985994396
+BUY id=5 date=2018-11-06 09:49 qty=600.0 price=12.592116666666668
+BUY id=6 date=2020-06-05 11:41 qty=1.0 price=15.37
+SELL id=0 date=2020-09-18 08:22 qty=4045.0 price=0.0
+  MATCH sell_id=0 buy_id=0 take=689.0 buy_price=14.165732946298984 sell_price=0.0 realized=-9760.19
+  MATCH sell_id=0 buy_id=1 take=665.0 buy_price=14.255864661654135 sell_price=0.0 realized=-9480.15
+  MATCH sell_id=0 buy_id=2 take=666.0 buy_price=14.265855855855856 sell_price=0.0 realized=-9501.06
+  MATCH sell_id=0 buy_id=3 take=710.0 buy_price=13.671549295774646 sell_price=0.0 realized=-9706.8
+  MATCH sell_id=0 buy_id=4 take=714.0 buy_price=13.327464985994396 sell_price=0.0 realized=-9515.81
+  MATCH sell_id=0 buy_id=5 take=600.0 buy_price=12.592116666666668 sell_price=0.0 realized=-7555.27
+  MATCH sell_id=0 buy_id=6 take=1.0 buy_price=15.37 sell_price=0.0 realized=-15.37
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 689
+BUY 1 -> 665
+BUY 2 -> 666
+BUY 3 -> 710
+BUY 4 -> 714
+BUY 5 -> 600
+BUY 6 -> 1
+--- Sale profits ---
+SALE id=0 date=2020-09-18 08:22 profit=-55534.65
+

@@ -1,0 +1,13 @@
+Product: ABC
+--- Transactions ---
+BUY id=0 date=2020-01-02 09:00 qty=100.0 price=10.0
+BUY id=1 date=2020-01-02 15:30 qty=50.0 price=12.0
+SELL id=0 date=2020-01-02 16:45 qty=120.0 price=15.0
+  MATCH sell_id=0 buy_id=0 take=100.0 buy_price=10.0 sell_price=15.0 realized=500.0
+  MATCH sell_id=0 buy_id=1 take=20.0 buy_price=12.0 sell_price=15.0 realized=60.0
+--- Matrix (rows=buys, cols=sells) ---
+BUY 0 -> 100
+BUY 1 -> 20
+--- Sale profits ---
+SALE id=0 date=2020-01-02 16:45 profit=560.0
+

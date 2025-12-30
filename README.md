@@ -9,6 +9,12 @@ A small Flask app that calculates realized capital gains using FIFO matching. It
 - FIFO matching for sell transactions
 - Per-transaction breakdown and total realized gains
 
+## TODO
+- [x] Add spreadsheet table headings — Write heading rows before each section in per-product sheets using explicit header strings
+- [ ] Deploy to Azure — See the Microsoft Azure App Service quickstart for Python (Flask):
+	- https://learn.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-cli%2Cazure-cli-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli#create-a-web-app-in-azure
+	- Note: these are instructions for deploying the app using Azure App Service (Flask).
+
 ## Quick Start
 
 Install dependencies (inside a virtualenv is recommended). This project targets **Python 3.13**:
