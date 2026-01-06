@@ -2,6 +2,8 @@
 
 A small Flask app that calculates realized capital gains using FIFO matching. It allows users to upload CSV files containing stock transactions and extracts the transaction `date`, `quantity`, and `price` columns.
 
+Largely vibe-coded as an experimental trial with Copilot. Code is a bit messy but results seem consistent with expectations and are easily verified.
+
 ## Features
 - CSV upload
 - Automatic column detection (best-effort)
@@ -10,10 +12,10 @@ A small Flask app that calculates realized capital gains using FIFO matching. It
 - Per-transaction breakdown and total realized gains
 
 ## TODO
-- [x] Add spreadsheet table headings — Write heading rows before each section in per-product sheets using explicit header strings
 - [ ] Deploy to Azure — See the Microsoft Azure App Service quickstart for Python (Flask):
 	- https://learn.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=flask%2Cwindows%2Cazure-cli%2Cazure-cli-deploy%2Cdeploy-instructions-azportal%2Cterminal-bash%2Cdeploy-instructions-zip-azcli#create-a-web-app-in-azure
 	- Note: these are instructions for deploying the app using Azure App Service (Flask).
+- [ ] Remove behaviour that all CSV's are stored in ./uploads/ (would be better if it were done locally but this is not feasible in Python)
 
 ## Quick Start
 
@@ -39,8 +41,8 @@ Open your browser at http://127.0.0.1:5000/ and upload a CSV.
 The CSV should include columns for transaction date, quantity, and price. The app automatically tries to detect common column names. If detection fails, you'll be prompted to map the columns manually.
 
 - Quantity should be positive for Buy and negative for Sell; the app determines buy/sell from the sign of the quantity.
- - Quantity should be positive for Buy and negative for Sell; the app determines buy/sell from the sign of the quantity.
- - Product column: include a column with the stock symbol or product name (e.g. `product`, `symbol`); the app will group transactions by product and produce a FIFO matching matrix for each product.
+- Product column: include a column with the stock symbol or product name (e.g. `product`, `symbol`); the app will group transactions by product and produce a FIFO matching matrix for each product.
+- Total value of each transaction
 - Dates are parsed with `dateutil` and should be in a recognizable format.
 
 ## License
